@@ -7,7 +7,7 @@
 
 #### url
 
-http://134.175.30.106:3000/sms/send
+/sms/send
 
 #### req
 
@@ -29,7 +29,7 @@ tel=18666661188
 
 #### url
 
-http://134.175.30.106:3000/users/login
+/users/login
 
 #### req
 
@@ -59,7 +59,7 @@ tel=18666661188&code=123456
 
 #### url
 
-http://134.175.30.106:3000/users/regist
+/users/regist
 
 #### req
 
@@ -76,7 +76,7 @@ http://134.175.30.106:3000/users/regist
 
 #### url
 
-http://134.175.30.106:3000/users/1
+/users/1
 
 #### req
 
@@ -103,7 +103,7 @@ uid在url中，1表示uid
 
 #### url
 
-http://134.175.30.106:3000/posts/add
+/posts/add
 
 #### req
 
@@ -119,7 +119,7 @@ http://134.175.30.106:3000/posts/add
 
 #### url
 
-http://134.175.30.106:3000/posts/post-id/123
+/posts/post-id/123
 
 #### req
 
@@ -148,7 +148,7 @@ http://134.175.30.106:3000/posts/post-id/123
 
 #### url
 
-http://134.175.30.106:3000/posts/reply-time/1541496337
+/posts/reply-time/1541496337
 
 #### req
 
