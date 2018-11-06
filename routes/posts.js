@@ -2,16 +2,16 @@ var express = require('express');
 var router = express.Router();
 var db = require('../utils/db');
 
-router.get('/', function(req, res, next){
-	var postid = req.param('postid');
-	var replytime = req.param('replytime');
+router.get('/post-id/:postId', function(req, res, next){
+	var postid = req.params.postId;
+	
+	db.query('SELECT * FROM tbPost where postid=?', [postid], function(rows, fields){
+		res.send(JSON.stringify(rows));
+	});
+});
 
-	//按照帖子id返回
-	if(postid){
-		db.query('SELECT * FROM tbPost where postid=?', [postid], function(rows, fields){
-			res.send(JSON.stringify(rows));
-		});
-	}
+router.get('/reply-time/:replyTime', function(req, res, next){
+	var replytime = req.params.replyTime;
 
 	//按照回复时间返回
 	if(replytime > 0){
