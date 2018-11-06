@@ -21,16 +21,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(session({
-//   name: 'skey',
-//   secret: 'tongshi',
-//   store: new FileStore(),
-//   resave: false,
-//   saveUninitialized: false,
-//   cookie: {
-//     maxAge: 30 * 60 * 1000 // 有效期，单位是毫秒
-//   }
-// }));
+app.use(session({
+  name: 'skey',
+  secret: 'tongshi',
+  store: new FileStore(),
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 30 * 60 * 1000 // 有效期，单位是毫秒
+  }
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(function(req, res, next){
@@ -39,10 +39,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   }
 //   next();
 // });
-// app.use(function(req, res, next){
-//   res.setHeader('Content-Type', 'application/json');
-//   next();
-// });
+app.use(function(req, res, next){
+  res.set('Content-Type', 'application/json');
+  next();
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/sms', smsRouter);
