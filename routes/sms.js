@@ -17,3 +17,5 @@ router.get('/send', function(req, rsp, next){
     rsp.send(result);
 
 });
+
+module.exports = router;
